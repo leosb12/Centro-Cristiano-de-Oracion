@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom'
 import {
   ArrowLeft, Heart, ExternalLink, MapPin, Users, Home, Gift, Music,
-  Hammer, BookOpen, Cross, Sparkles, ZoomIn, X, Star
+  Hammer, BookOpen, Cross, Sparkles, Star
 } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -79,234 +79,79 @@ function FadeSection({ children, className = '' }) {
   )
 }
 
-function PhotoGrid({ photos, count = 4 }) {
-  const [lightbox, setLightbox] = useState(null)
+function PhotoGrid({ photos }) {
+  if (photos.length === 0) return null
 
-  if (photos.length === 0) {
-    return (
-      <div className="space-y-3">
-        <div className="w-full aspect-[3/2] bg-gray-100 flex flex-col items-center justify-center gap-2 text-gray-300 border border-dashed border-gray-200">
-          <BookOpen size={28} />
-          <span className="text-xs opacity-60">Foto principal</span>
-        </div>
+  return (
+    <div className="space-y-3">
+      <div className="w-full aspect-[3/2] overflow-hidden bg-gray-100">
+        <img
+          src={photos[0].src}
+          alt={photos[0].alt}
+          className="w-full h-full object-cover"
+        />
+      </div>
+      {photos.length > 1 && (
         <div className="grid grid-cols-3 gap-3">
-          {[...Array(count - 1)].map((_, i) => (
-            <div key={i} className="aspect-square bg-gray-100 flex flex-col items-center justify-center gap-2 text-gray-300 border border-dashed border-gray-200">
-              <BookOpen size={18} />
-              <span className="text-xs opacity-60">{i + 2}</span>
+          {photos.slice(1).map((p, i) => (
+            <div key={i} className="aspect-square overflow-hidden bg-gray-100">
+              <img src={p.src} alt={p.alt} className="w-full h-full object-cover" />
             </div>
           ))}
         </div>
-      </div>
-    )
-  }
-
-  return (
-    <>
-      {/* Lightbox */}
-      {lightbox !== null && (
-        <div
-          className="fixed inset-0 z-[200] bg-black/92 flex flex-col items-center justify-center p-4 gap-4"
-          onClick={() => setLightbox(null)}
-        >
-          <div className="relative" onClick={(e) => e.stopPropagation()}>
-            <button
-              className="absolute -top-3 -right-3 z-10 bg-[#0a0a0f] border border-white/20 text-white/80 hover:text-[#C9A84C] hover:border-[#C9A84C] transition-all rounded-full p-1.5 shadow-xl"
-              onClick={() => setLightbox(null)}
-            >
-              <X size={18} />
-            </button>
-            <img
-              src={photos[lightbox].src}
-              alt={photos[lightbox].alt}
-              className="max-h-[82vh] max-w-[92vw] object-contain shadow-2xl rounded-sm"
-            />
-          </div>
-          {photos.length > 1 && (
-            <div className="flex gap-2" onClick={(e) => e.stopPropagation()}>
-              {photos.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setLightbox(i)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    i === lightbox ? 'bg-[#C9A84C] w-6' : 'bg-white/40 w-2 hover:bg-white'
-                  }`}
-                />
-              ))}
-            </div>
-          )}
-        </div>
       )}
-
-      <div className="space-y-3">
-        {/* Foto 1: formato 3:2 ancho completo */}
-        <div
-          className="w-full aspect-[3/2] overflow-hidden bg-gray-100 relative group cursor-pointer"
-          onClick={() => setLightbox(0)}
-        >
-          <img
-            src={photos[0].src}
-            alt={photos[0].alt}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          />
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-all duration-300 flex items-center justify-center">
-            <div className="bg-[#C9A84C] rounded-full p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
-              <ZoomIn size={20} className="text-[#0a0a0f]" />
-            </div>
-          </div>
-        </div>
-
-        {/* Fotos 2-4: cuadradas */}
-        {photos.length > 1 && (
-          <div className="grid grid-cols-3 gap-3">
-            {photos.slice(1).map((p, i) => (
-              <div
-                key={i}
-                className="aspect-square overflow-hidden bg-gray-100 relative group cursor-pointer"
-                onClick={() => setLightbox(i + 1)}
-              >
-                <img
-                  src={p.src}
-                  alt={p.alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-all duration-300 flex items-center justify-center">
-                  <div className="bg-[#C9A84C] rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <ZoomIn size={14} className="text-[#0a0a0f]" />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-    </>
+    </div>
   )
 }
 
 function RegalosGallery({ photos }) {
-  const [lightbox, setLightbox] = useState(null)
+  if (!photos.length) return null
 
-  if (!photos.length) {
-    return (
-      <div className="flex flex-col items-center justify-center py-20 text-gray-200">
-        <Gift size={40} className="mb-4 opacity-30" />
-        <p className="text-sm opacity-50">Las fotos aparecerán aquí</p>
-      </div>
-    )
-  }
-
-  const Card = ({ p, idx, aspectClass = 'aspect-square' }) => (
-    <div
-      className={`${aspectClass} overflow-hidden relative group cursor-pointer bg-gray-100`}
-      onClick={() => setLightbox(idx)}
-    >
-      <img
-        src={p.src}
-        alt={p.alt}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-      />
-      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-        <div className="bg-[#C9A84C] rounded-full p-2.5 opacity-0 group-hover:opacity-100 transition-all duration-300 scale-75 group-hover:scale-100 shadow-lg">
-          <ZoomIn size={16} className="text-[#0a0a0f]" />
-        </div>
-      </div>
+  const Card = ({ p, aspectClass = 'aspect-square' }) => (
+    <div className={`${aspectClass} overflow-hidden bg-gray-100`}>
+      <img src={p.src} alt={p.alt} className="w-full h-full object-cover" />
     </div>
   )
 
   return (
-    <>
-      {/* Lightbox */}
-      {lightbox !== null && (
-        <div
-          className="fixed inset-0 z-[200] bg-black/92 flex flex-col items-center justify-center p-4 gap-4"
-          onClick={() => setLightbox(null)}
-        >
-          <div className="relative" onClick={(e) => e.stopPropagation()}>
-            <button
-              className="absolute -top-3 -right-3 z-10 bg-[#0a0a0f] border border-white/20 text-white/80 hover:text-[#C9A84C] hover:border-[#C9A84C] transition-all rounded-full p-1.5 shadow-xl"
-              onClick={() => setLightbox(null)}
+    <div className="space-y-3">
+      <div className="relative w-full aspect-[16/9] overflow-hidden">
+        <img
+          src={photos[0].src}
+          alt={photos[0].alt}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/65 via-[#0a0a0f]/10 to-transparent pointer-events-none" />
+        <div className="absolute bottom-5 left-6 right-6 flex items-end justify-between pointer-events-none">
+          <div className="flex items-center gap-2">
+            <Heart size={13} className="text-[#C9A84C] shrink-0" />
+            <span
+              className="text-white/90 text-xs tracking-[0.2em] uppercase font-semibold"
+              style={{ textShadow: '0 1px 8px rgba(0,0,0,0.9)' }}
             >
-              <X size={18} />
-            </button>
-            <img
-              src={photos[lightbox].src}
-              alt={photos[lightbox].alt}
-              className="max-h-[82vh] max-w-[92vw] object-contain shadow-2xl rounded-sm"
-            />
+              Entrega de regalos · Chacolejos
+            </span>
           </div>
-          <div className="flex gap-2" onClick={(e) => e.stopPropagation()}>
-            {photos.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setLightbox(i)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  i === lightbox ? 'bg-[#C9A84C] w-6' : 'bg-white/40 w-2 hover:bg-white'
-                }`}
-              />
-            ))}
-          </div>
+          <Gift size={16} className="text-[#C9A84C] opacity-70" />
+        </div>
+      </div>
+
+      {photos.length > 1 && (
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          {photos.slice(1, 5).map((p, i) => (
+            <Card key={i} p={p} aspectClass="aspect-square" />
+          ))}
         </div>
       )}
 
-      <div className="space-y-3">
-        {/* Foto 1: Hero 16:9 full-width */}
-        <div
-          className="relative w-full aspect-[16/9] overflow-hidden group cursor-pointer"
-          onClick={() => setLightbox(0)}
-        >
-          <img
-            src={photos[0].src}
-            alt={photos[0].alt}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/65 via-[#0a0a0f]/10 to-transparent pointer-events-none" />
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-all duration-300 flex items-center justify-center">
-            <div className="bg-[#C9A84C] rounded-full p-3 opacity-0 group-hover:opacity-100 transition-all duration-300 scale-75 group-hover:scale-100 shadow-xl">
-              <ZoomIn size={22} className="text-[#0a0a0f]" />
-            </div>
-          </div>
-          <div className="absolute bottom-5 left-6 right-6 flex items-end justify-between pointer-events-none">
-            <div className="flex items-center gap-2">
-              <Heart size={13} className="text-[#C9A84C] shrink-0" />
-              <span
-                className="text-white/90 text-xs tracking-[0.2em] uppercase font-semibold"
-                style={{ textShadow: '0 1px 8px rgba(0,0,0,0.9)' }}
-              >
-                Entrega de regalos · Chacolejos
-              </span>
-            </div>
-            <Gift size={16} className="text-[#C9A84C] opacity-70" />
-          </div>
+      {photos.length > 5 && (
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          {photos.slice(5).map((p, i) => (
+            <Card key={i} p={p} aspectClass={i === 1 ? 'aspect-[5/4]' : 'aspect-square'} />
+          ))}
         </div>
-
-        {/* Fotos 2–5 */}
-        {photos.length > 1 && (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {photos.slice(1, 5).map((p, i) => (
-              <Card key={i} p={p} idx={i + 1} aspectClass="aspect-square" />
-            ))}
-          </div>
-        )}
-
-        {/* Fotos 6–9 (foto índice 6 = 5:4) */}
-        {photos.length > 5 && (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {photos.slice(5).map((p, i) => {
-              const realIdx = i + 5
-              return (
-                <Card
-                  key={i}
-                  p={p}
-                  idx={realIdx}
-                  aspectClass={realIdx === 6 ? 'aspect-[5/4]' : 'aspect-square'}
-                />
-              )
-            })}
-          </div>
-        )}
-      </div>
-    </>
+      )}
+    </div>
   )
 }
 
@@ -423,9 +268,6 @@ export default function MisionesPage() {
 
             <FadeSection>
               <PhotoGrid photos={fotosConstuccion} count={6} />
-              <p className="text-xs text-gray-300 mt-4 text-center">
-                Fotos de la construcción: <code className="bg-gray-50 px-1 rounded text-gray-400">public/chacolejos/construccion/</code>
-              </p>
             </FadeSection>
           </div>
         </div>
