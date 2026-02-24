@@ -6,8 +6,8 @@ const navLinks = [
   { label: 'Nosotros', href: '#nosotros' },
   { label: 'Servicios', href: '#servicios' },
   { label: 'Ministerios', href: '#ministerios' },
-  { label: 'En Vivo', href: '#envivo', live: true },
   { label: 'Media', href: '#media' },
+  { label: 'FAQ', href: '#faq' },
   { label: 'Contacto', href: '#contacto' },
 ]
 
