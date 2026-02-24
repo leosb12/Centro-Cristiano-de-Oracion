@@ -18,6 +18,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -25,6 +27,7 @@ body {
   background-color: #ffffff;
   color: #111827;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 h1, h2, h3, h4 {

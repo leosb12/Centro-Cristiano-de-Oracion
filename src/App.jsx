@@ -4,7 +4,6 @@ import About from './components/About'
 import Horarios from './components/Horarios'
 import Ministerios from './components/Ministerios'
 import VersiculoBanner from './components/VersiculoBanner'
-import EnVivo from './components/EnVivo'
 import Media from './components/Media'
 import Contacto from './components/Contacto'
 import Footer from './components/Footer'
@@ -12,7 +11,7 @@ import './App.css'
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden w-full">
       <Navbar />
       <main>
         <Hero />
@@ -20,7 +19,6 @@ function App() {
         <Horarios />
         <Ministerios />
         <VersiculoBanner />
-        <EnVivo />
         <Media />
         <Contacto />
       </main>
