@@ -1,41 +1,34 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 
 const ministerios = [
-  {
-    titulo: 'Niños',
-    subtitulo: 'CCO Kids',
-    descripcion: 'Enseñando a la próxima generación el amor de Dios a través de historias bíblicas, adoración y actividades creativas llenas de vida.',
-    imagen: 'https://images.unsplash.com/photo-1607453998774-d533f65dac99?w=600&q=80',
-  },
-  {
-    titulo: 'Jóvenes',
-    subtitulo: 'CCO Jóvenes',
-    descripcion: 'Un espacio seguro y vibrante donde los jóvenes descubren su identidad en Cristo, forjan amistades genuinas y son equipados para impactar su generación.',
-    imagen: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80',
-  },
-  {
-    titulo: 'Parejas',
-    subtitulo: 'CCO Familias',
-    descripcion: 'Edificando matrimonios, familias y hogares sobre la roca sólida de la Palabra de Dios, con principios bíblicos para una vida en amor y unidad.',
-    imagen: 'https://images.unsplash.com/photo-1620662736427-b8a198f52a4d?w=600&q=80',
-  },
   {
     titulo: 'Adoración',
     subtitulo: 'CCO Worship',
     descripcion: 'Un equipo apasionado que guía a la congregación a la presencia de Dios a través de música y adoración profunda y auténtica.',
-    imagen: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&q=80',
+    imagen: '/ministerios/Adoracion.jpg',
+    ruta: '/ministerios/adoracion',
   },
   {
-    titulo: 'Misiones',
-    subtitulo: 'CCO Misiones',
-    descripcion: 'Llevando el Evangelio más allá de nuestras fronteras, sirviendo a las comunidades locales e internacionales con amor práctico y compasión.',
-    imagen: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80',
+    titulo: 'Escuela de Niños',
+    subtitulo: 'CCO Kids',
+    descripcion: 'Enseñando a la próxima generación el amor de Dios a través de historias bíblicas, adoración y actividades creativas llenas de vida.',
+    imagen: '/ministerios/Escuela%20de%20ni%C3%B1os.jpg',
+    ruta: '/ministerios/escuela-de-ninos',
   },
   {
-    titulo: 'Mujeres',
+    titulo: 'Hombres con Propósito',
+    subtitulo: 'CCO Hombres',
+    descripcion: 'Un espacio para que los hombres crezcan en su fe, carácter y llamado, siendo forjados para ser pilares en su familia, iglesia y comunidad.',
+    imagen: '/ministerios/Hombres%20con%20proposito.jpg',
+    ruta: '/ministerios/hombres-con-proposito',
+  },
+  {
+    titulo: 'Mujeres con Propósito',
     subtitulo: 'CCO Mujeres',
     descripcion: 'Empoderando a mujeres de todas las edades a caminar en su identidad, propósito y llamado en Dios con fuerza, gracia y dignidad.',
-    imagen: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80',
+    imagen: '/ministerios/Mujeres%20con%20proposito.jpg',
+    ruta: '/ministerios/mujeres-con-proposito',
   },
 ]
 
@@ -79,11 +72,12 @@ export default function Ministerios() {
         </div>
 
         {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {ministerios.map((m, i) => (
-            <div
+            <Link
+              to={m.ruta}
               key={i}
-              className="fade-in group relative overflow-hidden cursor-pointer"
+              className="fade-in group relative overflow-hidden cursor-pointer block"
             >
               {/* Image */}
               <div className="relative h-80 overflow-hidden">
@@ -114,11 +108,11 @@ export default function Ministerios() {
                 <div className="flex items-center gap-2 mt-3">
                   <div className="w-5 h-px bg-[#C9A84C] group-hover:w-10 transition-all duration-500" />
                   <span className="text-[#C9A84C] text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    Saber más
+                    Ver más
                   </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
