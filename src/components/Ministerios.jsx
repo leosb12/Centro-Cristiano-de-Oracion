@@ -77,7 +77,7 @@ export default function Ministerios() {
             <Link
               to={m.ruta}
               key={i}
-              className="fade-in group relative overflow-hidden cursor-pointer block"
+              className="fade-in group relative overflow-hidden cursor-pointer block active:scale-[0.97] transition-transform duration-150"
             >
               {/* Image */}
               <div className="relative h-80 overflow-hidden">
@@ -100,14 +100,14 @@ export default function Ministerios() {
                 >
                   {m.titulo}
                 </h3>
-                <div className="max-h-0 overflow-hidden group-hover:max-h-24 transition-all duration-500 ease-in-out">
+                <div className="max-h-20 sm:max-h-0 overflow-hidden sm:group-hover:max-h-24 transition-all duration-500 ease-in-out">
                   <p className="text-gray-300 text-sm leading-relaxed pt-1">
                     {m.descripcion}
                   </p>
                 </div>
                 <div className="flex items-center gap-2 mt-3">
-                  <div className="w-5 h-px bg-[#C9A84C] group-hover:w-10 transition-all duration-500" />
-                  <span className="text-[#C9A84C] text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="w-10 sm:w-5 h-px bg-[#C9A84C] sm:group-hover:w-10 transition-all duration-500" />
+                  <span className="text-[#C9A84C] text-xs tracking-widest uppercase opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500">
                     Ver más
                   </span>
                 </div>
