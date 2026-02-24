@@ -7,6 +7,7 @@ const navLinks = [
   { label: 'Servicios', href: '#servicios' },
   { label: 'Ministerios', href: '#ministerios' },
   { label: 'Media', href: '#media' },
+  { label: 'FAQ', href: '#faq' },
   { label: 'Contacto', href: '#contacto' },
 ]
 

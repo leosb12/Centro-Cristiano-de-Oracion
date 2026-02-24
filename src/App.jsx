@@ -6,6 +6,7 @@ import Ministerios from './components/Ministerios'
 import VersiculoBanner from './components/VersiculoBanner'
 import Media from './components/Media'
 import Contacto from './components/Contacto'
+import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import './App.css'
 
@@ -20,6 +21,7 @@ function App() {
         <Ministerios />
         <VersiculoBanner />
         <Media />
+        <FAQ />
         <Contacto />
       </main>
       <Footer />
