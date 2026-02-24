@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { Menu, X, Cross } from 'lucide-react'
 
 const navLinks = [
@@ -6,6 +7,7 @@ const navLinks = [
   { label: 'Nosotros', href: '#nosotros' },
   { label: 'Servicios', href: '#servicios' },
   { label: 'Ministerios', href: '#ministerios' },
+  { label: 'Misiones', href: '/misiones' },
   { label: 'Media', href: '#media' },
   { label: 'FAQ', href: '#faq' },
   { label: 'Contacto', href: '#contacto' },
@@ -14,6 +16,8 @@ const navLinks = [
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60)
@@ -24,6 +28,14 @@ export default function Navbar() {
   const handleNavClick = (e, href) => {
     e.preventDefault()
     setOpen(false)
+    if (!href.startsWith('#')) {
+      navigate(href)
+      return
+    }
+    if (location.pathname !== '/') {
+      window.location.href = '/' + href
+      return
+    }
     const target = document.querySelector(href)
     if (target) {
       const offset = 80
