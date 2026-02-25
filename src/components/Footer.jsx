@@ -1,24 +1,47 @@
 import { Youtube, Phone, MapPin, ArrowUp } from 'lucide-react'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 
 const navLinks = [
-  { label: 'Inicio', href: '#inicio' },
-  { label: 'Nosotros', href: '#nosotros' },
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Ministerios', href: '#ministerios' },
-  { label: 'Media', href: '#media' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: 'Inicio',       href: '/#inicio' },
+  { label: 'Nosotros',     href: '/#nosotros' },
+  { label: 'Servicios',    href: '/servicios' },
+  { label: 'Ministerios',  href: '/ministerios' },
+  { label: 'Media',        href: '/#media' },
+  { label: 'Contacto',     href: '/#contacto' },
 ]
 
 export default function Footer() {
+  const navigate = useNavigate()
+  const location = useLocation()
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
   const handleNavClick = (e, href) => {
     e.preventDefault()
-    const target = document.querySelector(href)
-    if (target) {
-      const offset = 80
-      const top = target.getBoundingClientRect().top + window.scrollY - offset
-      window.scrollTo({ top, behavior: 'smooth' })
+    // Pure hash links (legacy)
+    if (href.startsWith('#')) {
+      const target = document.querySelector(href)
+      if (target) {
+        const top = target.getBoundingClientRect().top + window.scrollY - 80
+        window.scrollTo({ top, behavior: 'smooth' })
+      }
+      return
+    }
+    // Full paths without hash
+    if (!href.includes('#')) {
+      navigate(href)
+      return
+    }
+    // Paths with hash like /#contacto
+    const [path, hash] = href.split('#')
+    const targetPath = path || '/'
+    if (location.pathname === targetPath || (targetPath === '/' && location.pathname === '/')) {
+      const el = document.querySelector('#' + hash)
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.scrollY - 80
+        window.scrollTo({ top, behavior: 'smooth' })
+      }
+    } else {
+      navigate(href)
     }
   }
 
@@ -106,6 +129,15 @@ export default function Footer() {
               Redes Sociales
             </h4>
             <div className="flex gap-3">
+              <a
+                href="https://www.facebook.com/profile.php?id=100064736918636"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-500 hover:border-[#1877F2]/50 hover:text-[#1877F2] transition-all duration-300 hover:-translate-y-0.5"
+                aria-label="Facebook"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
               <a
                 href="https://youtube.com/@centrocristianodeoracion5679"
                 target="_blank"
