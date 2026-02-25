@@ -1,6 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import MisionesPage from './pages/MisionesPage'
+import ServiciosPage from './pages/ServiciosPage'
+import MinisteriosPage from './pages/MinisteriosPage'
 import AdoracionPage from './pages/ministerios/AdoracionPage'
 import EscuelaNinosPage from './pages/ministerios/EscuelaNinosPage'
 import HombresPage from './pages/ministerios/HombresPage'
@@ -16,6 +18,8 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/misiones" element={<MisionesPage />} />
+      <Route path="/servicios" element={<ServiciosPage />} />
+      <Route path="/ministerios" element={<MinisteriosPage />} />
       <Route path="/ministerios/adoracion" element={<AdoracionPage />} />
       <Route path="/ministerios/escuela-de-ninos" element={<EscuelaNinosPage />} />
       <Route path="/ministerios/hombres-con-proposito" element={<HombresPage />} />

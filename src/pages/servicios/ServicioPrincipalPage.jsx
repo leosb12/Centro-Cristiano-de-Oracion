@@ -10,12 +10,10 @@ const STYLES = `
   @keyframes bounce-y  { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
   @keyframes marquee   { from { transform:translateX(0) } to { transform:translateX(-50%) } }
   @keyframes pulse-gold { 0%,100%{opacity:.15} 50%{opacity:.45} }
-  @keyframes spin-slow  { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
   @keyframes glow-in    { from{opacity:0;transform:scaleX(0)} to{opacity:1;transform:scaleX(1)} }
   .sp-bounce    { animation: bounce-y 2s ease-in-out infinite; }
   .sp-marquee   { animation: marquee 28s linear infinite; }
   .sp-pulse     { animation: pulse-gold 3s ease-in-out infinite; }
-  .sp-spin      { animation: spin-slow 18s linear infinite; }
   @media(max-width:767px){ .sp-marquee{ animation-duration:14s; } }
 `
 
@@ -94,18 +92,6 @@ export default function ServicioPrincipalPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/10" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-transparent" />
-
-        {/* Cruz decorativa animada */}
-        <div className="absolute top-1/2 right-[8%] -translate-y-1/2 opacity-[0.06] sp-spin hidden md:block pointer-events-none select-none" style={{ width: '340px', height: '340px' }}>
-          <div className="absolute inset-0 border-2 border-[#C9A84C] rotate-45" />
-          <div className="absolute inset-8 border border-[#C9A84C]/60 rotate-45" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-px h-full bg-[#C9A84C]/60" />
-          </div>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="h-px w-full bg-[#C9A84C]/60" />
-          </div>
-        </div>
 
         {/* Volver */}
         <div className="absolute top-28 left-6 md:left-12 z-20">
@@ -428,11 +414,18 @@ export default function ServicioPrincipalPage() {
             <p className="text-white/50 text-base leading-relaxed mb-12 max-w-md mx-auto">
               No necesitás saber nada, traer nada, ni conocer a nadie. Solo vení. Te recibimos con los brazos abiertos.
             </p>
-            <Link to="/#contacto"
-              className="group inline-flex items-center gap-4 px-12 py-5 bg-[#C9A84C] text-black text-xs tracking-[0.35em] uppercase font-black hover:bg-white transition-colors duration-300">
-              Contactanos
-              <span className="w-6 h-px bg-black group-hover:w-10 transition-all duration-400 block" />
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
+              <Link to="/#contacto"
+                className="group inline-flex items-center gap-4 px-12 py-5 bg-[#C9A84C] text-black text-xs tracking-[0.35em] uppercase font-black hover:bg-white transition-colors duration-300">
+                Contactanos
+                <span className="w-6 h-px bg-black group-hover:w-10 transition-all duration-400 block" />
+              </Link>
+              <a href="tel:+12702024590"
+                className="inline-flex items-center gap-2 text-white/60 hover:text-[#C9A84C] transition-colors duration-300 text-sm tracking-widest font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                (270) 202-4590
+              </a>
+            </div>
           </R>
         </div>
       </section>

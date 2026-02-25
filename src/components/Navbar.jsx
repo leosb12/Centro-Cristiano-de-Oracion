@@ -5,8 +5,8 @@ import { Menu, X, Cross } from 'lucide-react'
 const navLinks = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Nosotros', href: '#nosotros' },
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Ministerios', href: '#ministerios' },
+  { label: 'Servicios',   href: '/servicios' },
+  { label: 'Ministerios', href: '/ministerios' },
   { label: 'Misiones', href: '/misiones' },
   { label: 'Media', href: '#media' },
   { label: 'FAQ', href: '#faq' },
@@ -25,6 +25,15 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const scrollToHash = (hash) => {
+    const target = document.querySelector(hash)
+    if (target) {
+      const offset = 80
+      const top = target.getBoundingClientRect().top + window.scrollY - offset
+      window.scrollTo({ top, behavior: 'smooth' })
+    }
+  }
+
   const handleNavClick = (e, href) => {
     e.preventDefault()
     setOpen(false)
@@ -33,15 +42,10 @@ export default function Navbar() {
       return
     }
     if (location.pathname !== '/') {
-      window.location.href = '/' + href
+      navigate('/' + href)
       return
     }
-    const target = document.querySelector(href)
-    if (target) {
-      const offset = 80
-      const top = target.getBoundingClientRect().top + window.scrollY - offset
-      window.scrollTo({ top, behavior: 'smooth' })
-    }
+    scrollToHash(href)
   }
 
   return (

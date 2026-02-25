@@ -479,11 +479,18 @@ export default function MujeresPage() {
             <p className="text-white/50 text-base leading-relaxed mb-12 max-w-md mx-auto">
               No necesitás llegar perfecta. Solo necesitás querer crecer. Este ministerio está hecho para vos.
             </p>
-            <Link to="/#contacto"
-              className="group inline-flex items-center gap-4 px-12 py-5 bg-[#C9A84C] text-black text-xs tracking-[0.35em] uppercase font-black hover:bg-white transition-colors duration-300">
-              Quiero sumarme
-              <span className="w-6 h-px bg-black group-hover:w-10 transition-all duration-400 block" />
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
+              <Link to="/#contacto"
+                className="group inline-flex items-center gap-4 px-12 py-5 bg-[#C9A84C] text-black text-xs tracking-[0.35em] uppercase font-black hover:bg-white transition-colors duration-300">
+                Quiero sumarme
+                <span className="w-6 h-px bg-black group-hover:w-10 transition-all duration-400 block" />
+              </Link>
+              <a href="tel:+12702025733"
+                className="inline-flex items-center gap-2 text-white/60 hover:text-[#C9A84C] transition-colors duration-300 text-sm tracking-widest font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span><span className="block text-[10px] tracking-widest uppercase text-[#C9A84C] font-bold leading-none mb-0.5">Pastora Brenda</span>(270) 202-5733</span>
+              </a>
+            </div>
           </R>
         </div>
       </section>
