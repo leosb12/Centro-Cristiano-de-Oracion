@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
-import { Clock, Calendar, MapPin } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { Clock, Calendar, MapPin, ArrowRight } from 'lucide-react'
 
 const servicios = [
   {
@@ -10,6 +11,7 @@ const servicios = [
     descripcion: 'Nuestro culto principal de adoración y predicación de la Palabra. Toda la familia es bienvenida.',
     icon: <Calendar size={28} />,
     highlight: true,
+    ruta: '/servicios/servicio-principal',
   },
   {
     dia: 'Martes',
@@ -19,6 +21,7 @@ const servicios = [
     descripcion: 'Un tiempo especial de oración intercesora donde nos unimos ante la presencia de Dios.',
     icon: <Clock size={28} />,
     highlight: false,
+    ruta: '/servicios/noche-de-oracion',
   },
   {
     dia: 'Jueves',
@@ -28,6 +31,7 @@ const servicios = [
     descripcion: 'Profundizamos juntos en la Palabra de Dios para crecer en fe, conocimiento y propósito.',
     icon: <Calendar size={28} />,
     highlight: false,
+    ruta: '/servicios/estudio-biblico',
   },
   {
     dia: 'Sábado',
@@ -37,6 +41,7 @@ const servicios = [
     descripcion: 'Un tiempo poderoso de ayuno, intercesión y búsqueda del rostro de Dios en comunidad.',
     icon: <Clock size={28} />,
     highlight: false,
+    ruta: '/servicios/oracion-y-ayuno',
   },
 ]
 
@@ -99,9 +104,10 @@ export default function Horarios() {
         {/* Services Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {servicios.map((s, i) => (
-            <div
+            <Link
               key={i}
-              className={`fade-in group relative overflow-hidden p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl cursor-pointer ${
+              to={s.ruta}
+              className={`fade-in group relative overflow-hidden p-8 flex flex-col transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl active:scale-[0.97] select-none ${
                 s.highlight
                   ? 'bg-[#C9A84C] text-[#0a0a0f]'
                   : 'bg-[#111118] border border-white/8 hover:border-[#C9A84C]/40 text-white'
@@ -143,11 +149,22 @@ export default function Horarios() {
               </p>
               <div className={`w-10 h-px mb-5 ${s.highlight ? 'bg-[#0a0a0f]/40' : 'bg-[#C9A84C]/40'}`} />
               <p
-                className={`text-sm leading-relaxed ${s.highlight ? 'text-[#0a0a0f]/80' : 'text-gray-500'}`}
+                className={`text-sm leading-relaxed flex-1 ${s.highlight ? 'text-[#0a0a0f]/80' : 'text-gray-500'}`}
               >
                 {s.descripcion}
               </p>
-            </div>
+              {/* Always-visible CTA — especially important on mobile */}
+              <div className={`mt-6 flex items-center gap-2 text-xs font-bold tracking-[0.25em] uppercase ${
+                s.highlight ? 'text-[#0a0a0f]' : 'text-[#C9A84C]'
+              }`}>
+                <span>Ver más</span>
+                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300" />
+              </div>
+              {/* Bottom gold bar on non-highlight cards */}
+              {!s.highlight && (
+                <div className="absolute bottom-0 left-0 h-[3px] bg-[#C9A84C] w-0 group-hover:w-full transition-all duration-500" />
+              )}
+            </Link>
           ))}
         </div>
 
