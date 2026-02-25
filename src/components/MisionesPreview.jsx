@@ -41,7 +41,7 @@ export default function MisionesPreview() {
           <div className="relative min-h-72 md:min-h-96 overflow-hidden">
             <img
               src="/chacolejos/Presentacion.jpg"
-              alt="Misión en Chacolejos"
+              alt="Misión en Chaco Lejos"
               className="absolute inset-0 w-full h-full object-cover"
             />
             {/* Dark overlay so text is legible */}
@@ -49,7 +49,7 @@ export default function MisionesPreview() {
             <div className="relative z-10 flex flex-col justify-end h-full min-h-72 md:min-h-96 p-10">
               <div className="flex items-center gap-2 mb-4">
                 <MapPin size={16} className="text-[#C9A84C]" />
-                <span className="text-[#C9A84C] text-xs tracking-widest uppercase font-medium">Chacolejos</span>
+                <span className="text-[#C9A84C] text-xs tracking-widest uppercase font-medium">Chaco Lejos · Beni, Bolivia</span>
               </div>
               <p className="text-4xl md:text-5xl font-bold leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
                 Una iglesia<br />
@@ -66,7 +66,7 @@ export default function MisionesPreview() {
             <div>
               <p className="text-gray-300 leading-relaxed text-base mb-6">
                 Con fe, trabajo y mucho amor, un equipo de nuestra iglesia viajó hasta la comunidad 
-                de Chacolejos y construyó desde cero una iglesia para las niñas y niños de esa comunidad. 
+                de Chaco Lejos y construyó desde cero una iglesia para las niñas y niños de esa comunidad. 
                 Una obra que Dios puso en nuestros corazones y que hoy impacta vidas cada semana.
               </p>
               <ul className="space-y-3 text-sm text-gray-400">

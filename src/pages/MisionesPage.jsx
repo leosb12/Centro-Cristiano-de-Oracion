@@ -9,7 +9,7 @@ import Footer from '../components/Footer'
 import FacebookVideo from '../components/FacebookVideo'
 
 const fotosConstuccion = [
-  { src: '/chacolejos/construccion/1.jpg', alt: 'Construcción de la iglesia en Chacolejos' },
+  { src: '/chacolejos/construccion/1.jpg', alt: 'Construcción de la iglesia en Chaco Lejos' },
   { src: '/chacolejos/construccion/2.jpg', alt: 'Equipo trabajando en la obra' },
   { src: '/chacolejos/construccion/3.jpg', alt: 'Avance de la construcción' },
   { src: '/chacolejos/construccion/4.jpg', alt: 'Comunidad participando en la construcción' },
@@ -17,12 +17,12 @@ const fotosConstuccion = [
 
 // foto 1 = 16:9 | fotos 3–7,9,10 = cuadradas | foto 8 = 5:4
 const fotosRegalos = [
-  { src: '/regalos/1.jpg',  alt: 'Entrega de regalos a los niños de Chacolejos' },
-  { src: '/regalos/3.jpg',  alt: 'Niños recibiendo regalos en Chacolejos' },
+  { src: '/regalos/1.jpg',  alt: 'Entrega de regalos a los niños de Chaco Lejos' },
+  { src: '/regalos/3.jpg',  alt: 'Niños recibiendo regalos en Chaco Lejos' },
   { src: '/regalos/4.jpg',  alt: 'Momentos especiales durante la entrega' },
   { src: '/regalos/5.jpg',  alt: 'Alegría de los niños con sus regalos' },
   { src: '/regalos/6.jpg',  alt: 'Equipo de misiones con los niños' },
-  { src: '/regalos/7.jpg',  alt: 'Niños felices en Chacolejos' },
+  { src: '/regalos/7.jpg',  alt: 'Niños felices en Chaco Lejos' },
   { src: '/regalos/8.jpg',  alt: 'La iglesia llena de alegría' },
   { src: '/regalos/9.jpg',  alt: 'Cada niño es especial para Dios' },
   { src: '/regalos/10.jpg', alt: 'Amor compartido en la misión' },
@@ -32,7 +32,7 @@ const stats = [
   { icon: Users, value: '30+', label: 'Niños bendecidos' },
   { icon: Home,  value: '1',   label: 'Iglesia construida' },
   { icon: Heart, value: '2024',label: 'Año de la misión' },
-  { icon: MapPin,value: 'Chacolejos', label: 'Comunidad impactada' },
+  { icon: MapPin, value: 'Chaco Lejos', label: 'Comunidad impactada' },
 ]
 
 function FadeSection({ children, className = '' }) {
@@ -129,7 +129,7 @@ function RegalosGallery({ photos }) {
               className="text-white/90 text-xs tracking-[0.2em] uppercase font-semibold"
               style={{ textShadow: '0 1px 8px rgba(0,0,0,0.9)' }}
             >
-              Entrega de regalos · Chacolejos
+              Entrega de regalos · Chaco Lejos
             </span>
           </div>
           <Gift size={16} className="text-[#C9A84C] opacity-70" />
@@ -183,7 +183,7 @@ export default function MisionesPage() {
       <section className="relative text-white pt-36 pb-28 overflow-hidden min-h-[70vh] flex items-end">
         <img
           src="/chacolejos/banner.jpg"
-          alt="Misión en Chacolejos"
+          alt="Misión en Chaco Lejos"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-[#0a0a0f]/55" />
@@ -197,12 +197,18 @@ export default function MisionesPage() {
           <p className="text-[#C9A84C] text-xs tracking-[0.35em] uppercase font-medium mb-3" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.9)' }}>
             Impacto Internacional
           </p>
-          <h1 className="text-5xl md:text-7xl font-bold mb-5 leading-none" style={{ fontFamily: 'Playfair Display, serif', textShadow: '0 3px 14px rgba(0,0,0,1)' }}>
+            <h1 className="text-5xl md:text-7xl font-bold mb-4 leading-none" style={{ fontFamily: 'Playfair Display, serif', textShadow: '0 3px 14px rgba(0,0,0,1)' }}>
             Misión en<br />
-            <span className="text-[#C9A84C]">Chacolejos</span>
+            <span className="text-[#C9A84C]">Chaco Lejos</span>
           </h1>
+          <div className="flex items-center gap-2 mb-5">
+            <MapPin size={14} className="text-[#C9A84C] shrink-0" />
+            <span className="text-gray-200 text-sm tracking-wide" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.9)' }}>
+              Chaco Lejos &middot; San Joaquín &middot; Región Beni, Bolivia
+            </span>
+          </div>
           <p className="text-gray-100 text-lg md:text-xl max-w-2xl leading-relaxed" style={{ textShadow: '0 1px 10px rgba(0,0,0,1)' }}>
-            Con fe, trabajo y amor, construimos una iglesia para las niñas y niños de la comunidad de Chacolejos.
+            Con fe, trabajo y amor, construimos una iglesia para las niñas y niños de la comunidad de Chaco Lejos.
             Una obra que Dios puso en nuestros corazones y que hoy transforma vidas.
           </p>
         </div>
@@ -241,18 +247,18 @@ export default function MisionesPage() {
                 <p>
                   Todo comenzó con una palabra de parte de Dios y un corazón dispuesto a obedecer.
                   El pastor y un pequeño equipo de nuestra iglesia en Bowling Green, KY, sintieron
-                  el llamado de llevar el evangelio a la comunidad de Chacolejos, un lugar humilde
+                  el llamado de llevar el evangelio a la comunidad de Chaco Lejos, un lugar humilde
                   donde los niños necesitaban más que solo un mensaje: necesitaban un hogar espiritual.
                 </p>
                 <p>
                   Se reunieron fondos, se juntaron materiales y, sobre todo, se elevaron muchas oraciones.
-                  Con herramientas en mano y fe en el corazón, el equipo viajó hasta Chacolejos
+                  Con herramientas en mano y fe en el corazón, el equipo viajó hasta Chaco Lejos
                   dispuesto a hacer lo que fuera necesario para que esa iglesia se levantara.
                 </p>
                 <p>
                   Los días fueron largos y el trabajo fue duro, pero cada bloque que se ponía era
                   una promesa cumplida. La comunidad local se unió al trabajo, y juntos
-                  levantaron desde cero una iglesia para las niñas y niños de Chacolejos.
+                  levantaron desde cero una iglesia para las niñas y niños de Chaco Lejos.
                 </p>
               </div>
 
@@ -313,7 +319,7 @@ export default function MisionesPage() {
             <CrossDivider />
             <p className="text-gray-500 text-lg max-w-2xl leading-relaxed mb-12">
               Porque cada niño merece sentirse especial y amado.
-              El equipo de la misión preparó regalos para los niños de Chacolejos, no solo cosas materiales
+              El equipo de la misión preparó regalos para los niños de Chaco Lejos, no solo cosas materiales
               sino el regalo más grande: saber que son vistos, conocidos y amados por Dios y por su iglesia.
             </p>
           </FadeSection>
@@ -350,7 +356,7 @@ export default function MisionesPage() {
             <CrossDivider />
             <p className="text-gray-500 text-lg max-w-2xl leading-relaxed mb-12">
               Hay pocas cosas más hermosas que escuchar las voces de los niños elevarse en alabanza.
-              Este es uno de los momentos más especiales de nuestra misión en Chacolejos,
+              Este es uno de los momentos más especiales de nuestra misión en Chaco Lejos,
               los niños cantando con todo el corazón para glorificar a Dios.
             </p>
           </FadeSection>
@@ -359,12 +365,12 @@ export default function MisionesPage() {
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <FacebookVideo
                 href="https://www.facebook.com/reel/3640897462861251"
-                title="Alabanza de los niños de Chacolejos"
+                title="Alabanza de los niños de Chaco Lejos"
               />
 
               <div className="space-y-5">
                 <p className="text-gray-600 leading-relaxed">
-                  Los niños de Chacolejos son la razón de esta misión. Verlos cantar con alegría,
+                  Los niños de Chaco Lejos son la razón de esta misión. Verlos cantar con alegría,
                   levantar sus manos y adorar a Dios con la inocencia que solo un niño puede tener
                   es el recordatorio más poderoso de por qué vale la pena servirle.
                 </p>
@@ -418,7 +424,7 @@ export default function MisionesPage() {
 
             <p className="text-gray-400 text-lg max-w-2xl leading-relaxed mb-12">
               Después de tanto trabajo, oración y fe, llegó el momento más esperado:
-              la inauguración de la iglesia en Chacolejos, Bolivia.
+              la inauguración de la iglesia en Chaco Lejos, Bolivia.
               Un día histórico lleno de alegría, lágrimas y gratitud a Dios.
             </p>
           </FadeSection>
@@ -427,12 +433,12 @@ export default function MisionesPage() {
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <FacebookVideo
                 href="https://www.facebook.com/reel/985058709296939"
-                title="Inauguración de la iglesia en Chacolejos Bolivia"
+                title="Inauguración de la iglesia en Chaco Lejos, Bolivia"
               />
 
               <div className="space-y-5">
                 <p className="text-gray-300 leading-relaxed">
-                  Después de semanas de trabajo duro, el equipo misionero y la comunidad de Chacolejos
+                  Después de semanas de trabajo duro, el equipo misionero y la comunidad de Chaco Lejos
                   se reunieron para celebrar juntos lo que Dios había hecho. Las puertas se abrieron
                   por primera vez y los niños entraron a su nuevo hogar espiritual.
                 </p>
@@ -472,7 +478,7 @@ export default function MisionesPage() {
             Toda la misión en Facebook
           </h2>
           <p className="text-gray-400 text-lg mb-10 leading-relaxed">
-            Fotos, videos y testimonios de todo lo que Dios hizo en Chacolejos.
+            Fotos, videos y testimonios de todo lo que Dios hizo en Chaco Lejos.
             Cada imagen cuenta una historia de fe, esperanza y amor.
           </p>
           <a
