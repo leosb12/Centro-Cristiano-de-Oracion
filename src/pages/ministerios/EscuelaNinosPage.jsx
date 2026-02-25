@@ -141,6 +141,67 @@ export default function EscuelaNinosPage() {
           </div>
         </FadeSection>
 
+      </main>
+
+      {/* ── Immersive full-bleed activities photo ── */}
+      <FadeSection>
+        {/*
+          min-h-[460px] ensures enough height on narrow phones.
+          On md+ the 56.25% padding-bottom takes over (16:9 ratio).
+        */}
+        <div
+          className="relative w-full overflow-hidden min-h-[460px] md:min-h-0"
+          style={{ paddingBottom: '56.25%' }}
+        >
+          {/* Photo */}
+          <img
+            src="/ministerios/niños/actividades.jpg"
+            alt="Actividades CCO Kids"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+
+          {/* Mobile: heavy full-screen overlay so text is always readable */}
+          <div className="absolute inset-0 bg-black/60 md:hidden" />
+          {/* Desktop: directional gradients */}
+          <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-black/80 via-black/40 to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+          {/* Gold corner accents — smaller on mobile */}
+          <div className="absolute top-4 left-4 w-6 h-6 md:top-6 md:left-6 md:w-10 md:h-10 border-t-2 border-l-2 border-[#C9A84C]" />
+          <div className="absolute top-4 right-4 w-6 h-6 md:top-6 md:right-6 md:w-10 md:h-10 border-t-2 border-r-2 border-[#C9A84C]" />
+          <div className="absolute bottom-4 left-4 w-6 h-6 md:bottom-6 md:left-6 md:w-10 md:h-10 border-b-2 border-l-2 border-[#C9A84C]" />
+          <div className="absolute bottom-4 right-4 w-6 h-6 md:bottom-6 md:right-6 md:w-10 md:h-10 border-b-2 border-r-2 border-[#C9A84C]" />
+
+          {/* Text overlay */}
+          <div className="absolute inset-0 flex flex-col justify-center px-6 sm:px-10 md:px-16 lg:px-24 max-w-2xl">
+            <p className="text-[#C9A84C] text-[10px] sm:text-xs tracking-[0.3em] uppercase font-semibold mb-2 md:mb-4">
+              CCO Kids · Actividades
+            </p>
+            <h2
+              className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-3 md:mb-6"
+              style={{ fontFamily: 'Playfair Display, serif' }}
+            >
+              Cada actividad<br />es una semilla<br />de eternidad
+            </h2>
+            <div className="w-8 md:w-10 h-px bg-[#C9A84C] mb-3 md:mb-5" />
+            {/* Subtitle hidden on the smallest screens to avoid overflow */}
+            <p className="hidden sm:block text-white/70 text-sm md:text-base leading-relaxed max-w-sm">
+              Manualidades, juegos, historias bíblicas y mucho amor — así es como los niños de CCO aprenden que Dios los ve, los conoce y los ama.
+            </p>
+          </div>
+
+          {/* Bottom caption bar */}
+          <div className="absolute bottom-0 left-0 right-0 px-6 md:px-16 pb-3 md:pb-5 flex items-center">
+            <div className="flex items-center gap-2 md:gap-3">
+              <div className="w-1 h-5 md:h-6 bg-[#C9A84C]" />
+              <span className="text-white/50 text-[10px] md:text-xs tracking-widest uppercase">Centro Cristiano de Oración</span>
+            </div>
+          </div>
+        </div>
+      </FadeSection>
+
+      <main className="max-w-5xl mx-auto px-6 md:px-12 py-20 space-y-20">
+
         <FadeSection>
           {/* Section header */}
           <div className="text-center mb-12">
