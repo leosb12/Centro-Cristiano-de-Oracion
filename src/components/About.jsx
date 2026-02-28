@@ -24,9 +24,9 @@ const values = [
 ]
 
 const stats = [
-  { value: '15+', label: 'Años de ministerio' },
-  { value: '3', label: 'Servicios por semana' },
-  { value: '6', label: 'Ministerios activos' },
+  { value: '6', label: 'Años de ministerio' },
+  { value: '4', label: 'Servicios por semana' },
+  { value: '4', label: 'Ministerios activos' },
 ]
 
 export default function About() {
