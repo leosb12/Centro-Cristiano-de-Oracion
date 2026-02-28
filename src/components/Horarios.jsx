@@ -89,10 +89,10 @@ export default function Horarios() {
           </div>
           <div className="grid md:grid-cols-2 gap-8 items-end">
             <h2
-              className="text-5xl md:text-6xl font-bold text-white leading-tight"
+              className="text-5xl md:text-6xl font-bold leading-tight"
               style={{ fontFamily: 'Playfair Display, serif' }}
             >
-              Horarios de<br />
+              <span className="text-black">Horarios de</span><br />
               <span style={{ color: '#C9A84C' }}>Servicios</span>
             </h2>
             <p className="text-gray-400 text-base leading-relaxed md:pb-2">
