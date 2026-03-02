@@ -8,6 +8,7 @@ import Ministerios from '../components/Ministerios'
 import MisionesPreview from '../components/MisionesPreview'
 import VersiculoBanner from '../components/VersiculoBanner'
 import Media from '../components/Media'
+import Doctrina from '../components/Doctrina'
 import FAQ from '../components/FAQ'
 import Contacto from '../components/Contacto'
 import Footer from '../components/Footer'
@@ -36,6 +37,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <About />
+        <Doctrina />
         <Horarios />
         <Ministerios />
         <MisionesPreview />

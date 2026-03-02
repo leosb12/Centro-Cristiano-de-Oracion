@@ -260,7 +260,7 @@ export default function HombresPage() {
           {/* Image side */}
           <R dir="left" className="relative overflow-hidden min-h-[320px] md:min-h-0">
             <img
-              src="/ministerios/Confraternizacion.jpg"
+              src="/ministerios/hombres/hombres2/PHOTO-2026-02-27-19-57-45.jpg"
               alt="Confraternización CCO Hombres"
               className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
               style={{ aspectRatio: '16/9', display: 'block' }}
@@ -316,7 +316,7 @@ export default function HombresPage() {
             {/* Image */}
             <R dir="right" delay={150} className="relative overflow-hidden min-h-[420px] md:min-h-0 order-1 md:order-2">
               <img
-                src="/ministerios/Comida.jpg"
+                src="/ministerios/hombres/hombres2/PHOTO-2026-02-27-19-57-45 (1).jpg"
                 alt="La mesa — CCO Hombres"
                 className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-1000 hover:scale-105"
               />

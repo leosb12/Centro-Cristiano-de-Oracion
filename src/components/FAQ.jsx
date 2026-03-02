@@ -20,7 +20,10 @@ const faqs = [
   {
     pregunta: '¿Qué creen como iglesia? ¿Cuál es su doctrina?',
     respuesta:
-      'Somos una iglesia cristiana. Creemos que la Biblia es la Palabra inspirada de Dios y nuestra autoridad máxima. Creemos en la Trinidad — Padre, Hijo y Espíritu Santo — y que Jesucristo es el único camino de salvación. La fe personal en Cristo como Señor y Salvador es el fundamento de nuestra vida espiritual.',
+      'Somos una iglesia cristiana evangélica. Nuestra ',
+    doctrineLink: true,
+    respuestaFin:
+      ' se basa en la Biblia como Palabra inspirada de Dios y autoridad máxima. Creemos en la Trinidad — Padre, Hijo y Espíritu Santo — y que Jesucristo es el único camino de salvación. La fe personal en Cristo como Señor y Salvador es el fundamento de nuestra vida espiritual.',
   },
   {
     pregunta: '¿Cómo puedo ser salvo o entregar mi vida a Cristo?',
@@ -131,7 +134,22 @@ export default function FAQ() {
                       style={{ maxHeight: isOpen ? '400px' : '0px' }}
                     >
                       <p className="text-gray-500 text-sm leading-relaxed pb-6 pr-8">
-                        {faq.respuesta}
+                        {faq.doctrineLink ? (
+                          <>
+                            {faq.respuesta}
+                            <a
+                              href="#doctrina"
+                              onClick={(e) => {
+                                e.preventDefault()
+                                document.querySelector('#doctrina')?.scrollIntoView({ behavior: 'smooth' })
+                              }}
+                              className="text-blue-500 font-semibold hover:text-blue-700 underline underline-offset-2 transition-colors duration-200"
+                            >
+                              doctrina
+                            </a>
+                            {faq.respuestaFin}
+                          </>
+                        ) : faq.respuesta}
                       </p>
                     </div>
                   </div>

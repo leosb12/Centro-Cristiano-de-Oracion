@@ -5,6 +5,7 @@ import { Menu, X, Cross } from 'lucide-react'
 const navLinks = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Nosotros', href: '#nosotros' },
+  { label: 'Doctrina', href: '#doctrina' },
   { label: 'Servicios',   href: '/servicios' },
   { label: 'Ministerios', href: '/ministerios' },
   { label: 'Misiones', href: '/misiones' },
