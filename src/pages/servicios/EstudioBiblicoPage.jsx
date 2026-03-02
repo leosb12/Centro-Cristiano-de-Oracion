@@ -51,7 +51,7 @@ function GoldLine({ delay = 0, className = '' }) {
   )
 }
 
-const TICKER_WORDS = ['Escritura', 'Verdad', 'Estudio', 'Miércoles', 'Biblia', 'Conocimiento', 'Palabra', 'Revelación', 'Fe', 'Crecimiento']
+const TICKER_WORDS = ['Escritura', 'Verdad', 'Estudio', 'Jueves', 'Biblia', 'Conocimiento', 'Palabra', 'Revelación', 'Fe', 'Crecimiento']
 
 function Ticker() {
   const doubled = [...TICKER_WORDS, ...TICKER_WORDS]
@@ -125,7 +125,7 @@ export default function EstudioBiblicoPage() {
         <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-14 pb-20 md:pb-24 z-10">
           <p style={{ animation: 'fadeUp .7s .1s both' }}
             className="text-[#C9A84C] text-[10px] tracking-[0.45em] uppercase font-bold mb-5">
-            CCO · Miércoles 7:00 PM
+            CCO · Jueves 7:00 PM
           </p>
           <h1 style={{ animation: 'fadeUp .8s .25s both', fontFamily: 'Playfair Display, serif' }}
             className="text-[clamp(3rem,10vw,7rem)] font-bold text-white leading-[0.95] mb-6 tracking-tight">
@@ -176,7 +176,7 @@ export default function EstudioBiblicoPage() {
             </h2>
             <GoldLine delay={200} className="mb-7" />
             <div className="space-y-4 text-gray-500 leading-relaxed text-[15px]">
-              <p>El Estudio Bíblico de los miércoles es un tiempo de profundización en la Escritura. No venimos solo a escuchar — venimos a entender, a cuestionar, a aplicar.</p>
+              <p>El Estudio Bíblico de los jueves es un tiempo de profundización en la Escritura. No venimos solo a escuchar — venimos a entender, a cuestionar, a aplicar.</p>
               <p>Cada semana abrimos un texto bíblico y lo recorremos juntos. La enseñanza es práctica, accesible y transformadora.</p>
             </div>
           </R>
@@ -188,7 +188,7 @@ export default function EstudioBiblicoPage() {
                 <p className="text-[#C9A84C] text-[10px] tracking-[0.4em] uppercase font-bold mb-6">Detalles</p>
                 <div className="space-y-5">
                   {[
-                    { label: 'Día',   value: 'Miércoles' },
+                    { label: 'Día',   value: 'Jueves' },
                     { label: 'Hora',  value: '7:00 PM – 8:30 PM' },
                     { label: 'Lugar', value: '824 Parkland Way, Bowling Green, KY' },
                     { label: 'Para',  value: 'Todos — de principiantes a avanzados' },
@@ -244,7 +244,7 @@ export default function EstudioBiblicoPage() {
           <R className="mb-16">
             <p className="text-[#C9A84C] text-[10px] tracking-[0.4em] uppercase font-bold mb-3">¿Qué vas a encontrar?</p>
             <h3 className="text-4xl md:text-5xl font-bold text-gray-900" style={{ fontFamily: 'Playfair Display, serif' }}>
-              Lo que pasa cada miércoles
+              Lo que pasa cada jueves
             </h3>
           </R>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0">
@@ -314,7 +314,7 @@ export default function EstudioBiblicoPage() {
           <R><p className="text-[#C9A84C] text-[10px] tracking-[0.45em] uppercase font-bold mb-6">Unite al estudio</p></R>
           <R delay={120}>
             <h3 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-[1.05] mb-8" style={{ fontFamily: 'Playfair Display, serif' }}>
-              Este miércoles abrimos la Palabra juntos.
+              Este jueves abrimos la Palabra juntos.
             </h3>
           </R>
           <R delay={240}>
