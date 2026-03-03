@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://centrocristianodeoracion.com/sitemap.xml
