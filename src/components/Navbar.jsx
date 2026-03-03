@@ -66,23 +66,23 @@ export default function Navbar() {
             className="w-10 h-10 rounded-full object-cover border border-[#C9A84C]/50 group-hover:border-[#C9A84C] transition-all duration-300"
           />
           <div className="leading-tight">
-            <p className={`font-bold text-sm tracking-widest uppercase ${scrolled ? 'text-gray-900' : 'text-white'}`} style={{ fontFamily: 'Inter, sans-serif' }}>
+            <p className={`font-bold text-xs tracking-[0.15em] uppercase whitespace-nowrap ${scrolled ? 'text-gray-900' : 'text-white'}`} style={{ fontFamily: 'Inter, sans-serif' }}>
               Centro Cristiano
             </p>
-            <p className="text-[#C9A84C] text-xs tracking-[0.2em] uppercase font-light">
+            <p className="text-[#C9A84C] text-[10px] tracking-[0.12em] uppercase font-light whitespace-nowrap">
               de Oración
             </p>
           </div>
         </a>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-4 xl:gap-6">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className={`text-sm font-medium tracking-widest uppercase transition-colors duration-300 relative group inline-flex items-center gap-1.5 ${scrolled ? 'text-gray-700 hover:text-[#C9A84C]' : 'text-white hover:text-[#C9A84C]'}`}
+              className={`text-xs font-medium tracking-wider uppercase transition-colors duration-300 relative group inline-flex items-center gap-1.5 whitespace-nowrap ${scrolled ? 'text-gray-700 hover:text-[#C9A84C]' : 'text-white hover:text-[#C9A84C]'}`}
               style={{ fontFamily: 'Inter, sans-serif' }}
             >
               {link.live && (
@@ -98,7 +98,7 @@ export default function Navbar() {
           <a
             href="#contacto"
             onClick={(e) => handleNavClick(e, '#contacto')}
-            className="bg-[#C9A84C] text-[#0a0a0f] px-6 py-2 text-xs font-bold tracking-widest uppercase transition-all duration-300 hover:bg-[#E8C96A] hover:shadow-lg hover:shadow-[#C9A84C]/30"
+            className="bg-[#C9A84C] text-[#0a0a0f] px-4 py-2 text-xs font-bold tracking-wider uppercase transition-all duration-300 hover:bg-[#E8C96A] hover:shadow-lg hover:shadow-[#C9A84C]/30 whitespace-nowrap"
           >
             Únete
           </a>
@@ -106,7 +106,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className={`md:hidden transition-colors ${scrolled ? 'text-gray-700 hover:text-[#C9A84C]' : 'text-white hover:text-[#C9A84C]'}`}
+          className={`lg:hidden transition-colors ${scrolled ? 'text-gray-700 hover:text-[#C9A84C]' : 'text-white hover:text-[#C9A84C]'}`}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -116,7 +116,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden transition-all duration-500 overflow-hidden ${
+        className={`lg:hidden transition-all duration-500 overflow-hidden ${
           open ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
         } bg-white border-t border-gray-200`}
       >

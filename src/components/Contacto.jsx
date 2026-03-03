@@ -36,6 +36,8 @@ export default function Contacto() {
   const sectionRef = useRef(null)
   const [formData, setFormData] = useState({ nombre: '', email: '', mensaje: '' })
   const [sent, setSent] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -54,11 +56,32 @@ export default function Contacto() {
     return () => observer.disconnect()
   }, [])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSent(true)
-    setFormData({ nombre: '', email: '', mensaje: '' })
-    setTimeout(() => setSent(false), 5000)
+    setLoading(true)
+    setError(null)
+    try {
+      const res = await fetch('https://formspree.io/f/xojngvzq', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: formData.nombre,
+          email: formData.email,
+          message: formData.mensaje,
+        }),
+      })
+      if (res.ok) {
+        setSent(true)
+        setFormData({ nombre: '', email: '', mensaje: '' })
+        setTimeout(() => setSent(false), 5000)
+      } else {
+        setError('Hubo un problema al enviar. Inténtalo de nuevo.')
+      }
+    } catch {
+      setError('Error de red. Verifica tu conexión.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -176,12 +199,16 @@ export default function Contacto() {
                       className="w-full bg-gray-50 border border-gray-200 text-gray-900 px-4 py-3 text-sm placeholder-gray-400 focus:outline-none focus:border-[#C9A84C] transition-colors duration-300 resize-none"
                     />
                   </div>
+                  {error && (
+                    <p className="text-red-500 text-xs text-center">{error}</p>
+                  )}
                   <button
                     type="submit"
-                    className="w-full bg-[#C9A84C] text-[#0a0a0f] px-8 py-4 text-xs font-bold tracking-widest uppercase transition-all duration-300 hover:bg-[#E8C96A] hover:shadow-lg flex items-center justify-center gap-2"
+                    disabled={loading}
+                    className="w-full bg-[#C9A84C] text-[#0a0a0f] px-8 py-4 text-xs font-bold tracking-widest uppercase transition-all duration-300 hover:bg-[#E8C96A] hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     <Send size={14} />
-                    Enviar Mensaje
+                    {loading ? 'Enviando...' : 'Enviar Mensaje'}
                   </button>
                 </form>
               )}
