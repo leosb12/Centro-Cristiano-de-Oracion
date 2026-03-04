@@ -86,7 +86,7 @@ export default function ServicioPrincipalPage() {
       {/* ── HERO ──────────────────────────────────────────────── */}
       <div className="relative h-screen min-h-[600px] max-h-[900px] overflow-hidden">
         <img ref={heroRef}
-          src="/domingo/banner.jpg"
+          src="/servicioa.jpg"
           alt="Servicio Principal CCO"
           className="absolute inset-0 w-full h-[120%] object-cover object-center will-change-transform -top-[10%]"
         />

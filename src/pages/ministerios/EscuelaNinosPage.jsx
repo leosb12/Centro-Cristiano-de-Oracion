@@ -124,7 +124,7 @@ export default function EscuelaNinosPage() {
             '/niños2/IMG_8830.jpeg',
             '/niños2/IMG_8831.jpeg',
             '/niños2/IMG_8832.jpeg',
-            '/niños2/IMG_8834.jpeg',
+            '/ninosd.jpg',
           ].map((src, i) => (
             <div key={i} className="aspect-square overflow-hidden">
               <img

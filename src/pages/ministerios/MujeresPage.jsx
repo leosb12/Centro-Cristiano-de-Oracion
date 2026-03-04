@@ -97,7 +97,7 @@ export default function MujeresPage() {
       <div className="relative h-screen min-h-[600px] max-h-[900px] overflow-hidden">
         <img
           ref={heroImgRef}
-          src="/ministerios/mujeres/banner.jpg"
+          src="/mujeres2 (1) (1).jpg"
           alt="Mujeres con Propósito"
           className="absolute inset-0 w-full h-[120%] object-cover object-center will-change-transform -top-[10%]"
         />

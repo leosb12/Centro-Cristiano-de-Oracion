@@ -7,6 +7,8 @@ import Horarios from '../components/Horarios'
 import Ministerios from '../components/Ministerios'
 import MisionesPreview from '../components/MisionesPreview'
 import VersiculoBanner from '../components/VersiculoBanner'
+import Pastores from '../components/Pastores'
+import ShortPresentation from '../components/ShortPresentation'
 import Media from '../components/Media'
 import Doctrina from '../components/Doctrina'
 import FAQ from '../components/FAQ'
@@ -41,7 +43,9 @@ export default function HomePage() {
         <Horarios />
         <Ministerios />
         <MisionesPreview />
+        <ShortPresentation />
         <VersiculoBanner />
+        <Pastores />
         <Media />
         <FAQ />
         <Contacto />
