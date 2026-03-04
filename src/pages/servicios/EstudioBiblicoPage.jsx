@@ -127,6 +127,10 @@ export default function EstudioBiblicoPage() {
             className="text-[#C9A84C] text-[10px] tracking-[0.45em] uppercase font-bold mb-5">
             CCO · Jueves 7:00 PM
           </p>
+          <div style={{ animation: 'fadeUp .6s .18s both' }} className="inline-flex items-center gap-2 bg-[#C9A84C]/15 border border-[#C9A84C]/40 rounded-full px-4 py-1 mb-5">
+            <span className="w-2 h-2 rounded-full bg-[#C9A84C] inline-block" />
+            <span className="text-[#C9A84C] text-[10px] tracking-[0.35em] uppercase font-bold">Servicio en Español</span>
+          </div>
           <h1 style={{ animation: 'fadeUp .8s .25s both', fontFamily: 'Playfair Display, serif' }}
             className="text-[clamp(3rem,10vw,7rem)] font-bold text-white leading-[0.95] mb-6 tracking-tight">
             Estudio<br />Bíblico

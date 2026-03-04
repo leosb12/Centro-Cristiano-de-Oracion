@@ -31,7 +31,7 @@ const fotosRegalos = [
 const stats = [
   { icon: Users, value: '30+', label: 'Niños bendecidos' },
   { icon: Home,  value: '1',   label: 'Iglesia construida' },
-  { icon: Heart, value: '2024',label: 'Año de la misión' },
+  { icon: Heart, value: '+15', label: 'Años de misión' },
   { icon: MapPin, value: 'Chacolejos', label: 'Comunidad impactada' },
 ]
 
@@ -287,7 +287,7 @@ export default function MisionesPage() {
               {[
                 { icon: Hammer, num: '01', title: 'Del terreno a la iglesia', desc: 'Construimos el edificio desde cero: cimientos, paredes, techo y puertas. Un espacio digno para que los niños encuentren a Dios.' },
                 { icon: BookOpen, num: '02', title: 'Equipados para adorar', desc: 'Instalamos sillas, biblias, materiales de enseñanza y todo lo necesario para que los cultos semanales fueran posibles.' },
-                { icon: Users, num: '03', title: 'Una comunidad plantada', desc: 'Capacitamos a líderes locales para continuar la obra. La iglesia hoy funciona cada semana con más de 30 niños.' },
+                { icon: Users, num: '03', title: 'Una comunidad plantada', desc: 'Capacitamos a líderes locales para continuar la obra. Hoy más de 30 niños y sus padres se reúnen cada semana para encontrarse con Dios.' },
               ].map(({ icon: Icon, num, title, desc }) => (
                 <div key={num} className="bg-white p-8 border-t-2 border-[#C9A84C] hover:shadow-lg hover:shadow-[#C9A84C]/10 transition-shadow duration-300">
                   <div className="flex items-center gap-3 mb-4">
