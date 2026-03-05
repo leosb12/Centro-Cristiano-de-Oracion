@@ -70,7 +70,7 @@ export default function Pastores() {
             <div className="fade-in space-y-5 text-white/60 text-base leading-relaxed max-w-md">
               <p>
                 Con más de 15 años sirviendo al Señor, el pastor Orlando y la pastora Brenda Gil
-                han dedicado su vida a edificar una congregación fundada en la oración, la Palabra
+                han dedicado su vida a edificar una congregación fundada en la Palabra, la oración
                 y el amor genuino por las personas.
               </p>
               <p>
