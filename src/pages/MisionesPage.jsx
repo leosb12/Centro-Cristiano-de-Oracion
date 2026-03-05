@@ -236,7 +236,7 @@ export default function MisionesPage() {
               <p className="text-xs tracking-widest uppercase font-medium text-gray-500">Cómo empezó todo</p>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
-              Un sueño que nació en oración
+              Un sueño que nació en el corazón de Dios
             </h2>
             <CrossDivider />
           </FadeSection>
