@@ -61,7 +61,7 @@ export default function Contacto() {
     setLoading(true)
     setError(null)
     try {
-      const res = await fetch('https://formspree.io/f/xojngvzq', {
+      const res = await fetch('https://formspree.io/f/xgonwvdy', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
