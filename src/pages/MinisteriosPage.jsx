@@ -129,7 +129,7 @@ export default function MinisteriosPage() {
       <div className="relative h-[75vh] min-h-[520px] max-h-[800px] overflow-hidden">
         <img
           ref={heroRef}
-          src="/ministerios/banner.jpg"
+          src="/ministerios/bannerh2.jpg"
           alt="Ministerios CCO"
           className="absolute inset-0 w-full h-[120%] object-cover object-center will-change-transform -top-[10%]"
         />

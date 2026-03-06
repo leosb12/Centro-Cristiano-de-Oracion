@@ -97,7 +97,7 @@ export default function HombresPage() {
       <div className="relative h-screen min-h-[600px] max-h-[900px] overflow-hidden">
         <img
           ref={heroImgRef}
-          src="/ministerios/banner.jpg"
+          src="/ministerios/bannerh2.jpg"
           alt="Hombres con Propósito"
           className="absolute inset-0 w-full h-[120%] object-cover object-center will-change-transform -top-[10%]"
         />
